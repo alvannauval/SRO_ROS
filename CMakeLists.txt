@@ -135,6 +135,8 @@ include
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/SRO_ROS_node.cpp)
 add_executable(talker_node src/talker.cpp)
+add_executable(talker_int_node src/talker_int.cpp)
+add_executable(talker_multiarray_node src/talker_multiarray.cpp)
 add_executable(listener_node src/listener.cpp)
 
 ## Rename C++ executable without prefix
@@ -153,6 +155,12 @@ add_executable(listener_node src/listener.cpp)
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(talker_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(talker_int_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(talker_multiarray_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(listener_node
